@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ScreenSaver
@@ -16,14 +17,12 @@ namespace ScreenSaver
 				}
 				else if (args[0].ToLower() == "/s")
 				{
-					for (int i = Screen.AllScreens.GetLowerBound(0); i <= Screen.AllScreens.GetUpperBound(0); i++) 
-						System.Windows.Forms.Application.Run(new ScreenSaverForm(i));				
+					System.Windows.Forms.Application.Run(new ScreenSaverForm());				
 				}
 			}
 			else
 			{
-				for (int i = Screen.AllScreens.GetLowerBound(0); i <= Screen.AllScreens.GetUpperBound(0); i++) 
-					System.Windows.Forms.Application.Run(new ScreenSaverForm(i));				
+                System.Windows.Forms.Application.Run(new ScreenSaverForm());
 			}
 		}
 	}
