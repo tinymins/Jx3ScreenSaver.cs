@@ -108,6 +108,8 @@
     <Content Include="Resources\Image0.png" />
     <Content Include="Resources\Image1.png" />
     <Content Include="Resources\Image2.png" />
+    <None Include="Resources\Image4.png" />
+    <None Include="Resources\Image3.png" />
     <EmbeddedResource Include="ScreenSaverForm.resx">
       <DependentUpon>ScreenSaverForm.cs</DependentUpon>
       <SubType>Designer</SubType>

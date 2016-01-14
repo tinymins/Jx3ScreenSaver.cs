@@ -8,7 +8,7 @@ namespace ScreenSaver
 {
     public class ScreenSaverForm : System.Windows.Forms.Form
     {
-        const int IMAGE_MAX_INDEX = 2;
+        const int IMAGE_MAX_INDEX = 4;
         const int PICBOX_MAX_COUNT = 120;
         private System.ComponentModel.IContainer components;
         private ResourceManager rs = new ResourceManager(typeof(ScreenSaverForm));
