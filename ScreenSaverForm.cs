@@ -130,7 +130,7 @@ namespace ScreenSaver
             ((System.ComponentModel.ISupportInitialize)(this.picBg)).BeginInit();
             this.SuspendLayout();
             // 
-            // timer1
+            // timer
             // 
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
@@ -141,7 +141,7 @@ namespace ScreenSaver
             this.lblMark.AutoSize = true;
             this.lblMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblMark.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblMark.Location = new System.Drawing.Point(212, 247);
+            this.lblMark.Location = new System.Drawing.Point(196, 245);
             this.lblMark.Name = "lblMark";
             this.lblMark.Size = new System.Drawing.Size(68, 17);
             this.lblMark.TabIndex = 0;
@@ -159,7 +159,7 @@ namespace ScreenSaver
             // 
             // ScreenSaverForm
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(292, 273);
             this.Controls.Add(this.picBg);
