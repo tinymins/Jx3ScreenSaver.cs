@@ -36,6 +36,8 @@ namespace Jx3ScreenSaver
                         break;
                 }
             }
+            Global.IsPreviewMode = iHandle != 0;
+
             ScreenSaverForm screenSaver = new ScreenSaverForm(iHandle);
             Application.Run(screenSaver);
         }

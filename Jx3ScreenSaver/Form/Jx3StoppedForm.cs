@@ -43,5 +43,20 @@ namespace Jx3ScreenSaver
         {
             m_InstanceCount--;
         }
+
+        private void Jx3StoppedForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            Global.OnExitEvent();
+        }
+
+        private void Jx3StoppedForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            Global.OnExitEvent();
+        }
+
+        private void Jx3StoppedForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            Global.OnMouseMove();
+        }
     }
 }

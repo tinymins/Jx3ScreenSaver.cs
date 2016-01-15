@@ -18,17 +18,9 @@ namespace Jx3ScreenSaver
 
         public ScreenSaverForm(int parentWindowHandle)
         {
-            InitializeComponent();
-
             m_parentWindowHandle = new IntPtr(parentWindowHandle);
-        }
 
-        protected bool IsPreviewMode
-        {
-            get
-            {
-                return m_parentWindowHandle != IntPtr.Zero;
-            }
+            InitializeComponent();
         }
 
         private void ScreenSaverForm_Load(object sender, EventArgs e)
@@ -75,48 +67,51 @@ namespace Jx3ScreenSaver
             gfxScreenshot.CopyFromScreen(ScreenArea.LeftMostBound, ScreenArea.TopMostBound, 0, 0, ScreenArea.RectangleMostBound.Size, CopyPixelOperation.SourceCopy);
             BackgroundImage = bmpScreenshot;
 
-            // Set opacity
-            if (!IsPreviewMode)
+            // Codes only run when not in preview mode
+            if (!Global.IsPreviewMode)
+            {
+                // Set opacity
                 Opacity = Properties.Settings.Default.BackgroundOpacity;
 
-            // Try to play background music if exist
-            if (!IsPreviewMode && System.IO.File.Exists(BG_MUSIC))
-                try
+                // Try to play background music if exist
+                if (System.IO.File.Exists(BG_MUSIC))
+                    try
+                    {
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                        player.SoundLocation = BG_MUSIC;
+                        player.PlayLooping();
+                    }
+                    catch (Exception) { }
+
+                // Create JX3 Form
+                for (int i = Screen.AllScreens.GetLowerBound(0); i <= Screen.AllScreens.GetUpperBound(0); i++)
                 {
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-                    player.SoundLocation = BG_MUSIC;
-                    player.PlayLooping();
+                    int index = i;
+                    (new System.Threading.Thread(delegate() { System.Windows.Forms.Application.Run(new JX3ClientForm(index)); })).Start();
                 }
-                catch (Exception) { }
+            }
 
             // Record current mouse position
             m_mouseLocation = Control.MousePosition;
 
             // Set Timer
             DrawingTimer.Interval = Properties.Settings.Default.CreateInterval;
-            DrawingTimer.Enabled = !IsPreviewMode;
+            DrawingTimer.Enabled = !Global.IsPreviewMode;
         }
 
         private void ScreenSaverForm_MouseDown(object sender, MouseEventArgs e)
         {
-            if (!IsPreviewMode)
-                Close();
+            Global.OnExitEvent();
         }
 
-        private void ScreenSaverForm_MouseMove(object sender, MouseEventArgs e)
+        public void ScreenSaverForm_MouseMove(object sender, MouseEventArgs e)
         {
-            if (Math.Abs(m_mouseLocation.X - MousePosition.X) > 10 || Math.Abs(m_mouseLocation.Y - MousePosition.Y) > 10)
-            {
-                if (!IsPreviewMode)
-                    Close();
-            }
-            m_mouseLocation = Control.MousePosition;
+            Global.OnMouseMove();
         }
 
         private void ScreenSaverForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!IsPreviewMode)
-                Close();
+            Global.OnExitEvent();
         }
 
         private void DrawingTimer_Tick(object sender, EventArgs e)

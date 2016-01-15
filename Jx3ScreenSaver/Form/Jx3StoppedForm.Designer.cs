@@ -44,7 +44,7 @@
             this.lblCaption.AutoSize = true;
             this.lblCaption.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblCaption.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblCaption.Location = new System.Drawing.Point(12, 9);
+            this.lblCaption.Location = new System.Drawing.Point(12, 8);
             this.lblCaption.Name = "lblCaption";
             this.lblCaption.Size = new System.Drawing.Size(204, 24);
             this.lblCaption.TabIndex = 0;
@@ -54,9 +54,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 100);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(401, 46);
+            this.pictureBox1.Size = new System.Drawing.Size(401, 42);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -64,7 +64,7 @@
             // 
             this.lblContent.AutoSize = true;
             this.lblContent.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblContent.Location = new System.Drawing.Point(12, 41);
+            this.lblContent.Location = new System.Drawing.Point(12, 38);
             this.lblContent.Name = "lblContent";
             this.lblContent.Size = new System.Drawing.Size(236, 19);
             this.lblContent.TabIndex = 2;
@@ -74,11 +74,11 @@
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(12, 70);
+            this.progressBar1.Location = new System.Drawing.Point(12, 65);
             this.progressBar1.MarqueeAnimationSpeed = 50;
             this.progressBar1.Maximum = 1000;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(375, 23);
+            this.progressBar1.Size = new System.Drawing.Size(375, 21);
             this.progressBar1.Step = 1;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 3;
@@ -86,9 +86,9 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(320, 119);
+            this.btnCancel.Location = new System.Drawing.Point(320, 110);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(67, 23);
+            this.btnCancel.Size = new System.Drawing.Size(67, 21);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -101,10 +101,10 @@
             // 
             // Jx3StoppedForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(401, 154);
+            this.ClientSize = new System.Drawing.Size(401, 142);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblContent);
@@ -119,6 +119,9 @@
             this.Text = "JX3Client";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Jx3StoppedForm_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Jx3StoppedForm_KeyDown);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Jx3StoppedForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Jx3StoppedForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
