@@ -50,9 +50,9 @@ namespace Jx3ScreenSaver.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int BackgroundOpacity {
+        public double BackgroundOpacity {
             get {
-                return ((int)(this["BackgroundOpacity"]));
+                return ((double)(this["BackgroundOpacity"]));
             }
             set {
                 this["BackgroundOpacity"] = value;
@@ -61,10 +61,10 @@ namespace Jx3ScreenSaver.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int ForegroundOpacity {
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public double ForegroundOpacity {
             get {
-                return ((int)(this["ForegroundOpacity"]));
+                return ((double)(this["ForegroundOpacity"]));
             }
             set {
                 this["ForegroundOpacity"] = value;

@@ -20,8 +20,8 @@ namespace Jx3ScreenSaver
             numericUpDownClosingTime.Value = Properties.Settings.Default.ClosingTime;
             numericUpDownCreateInterval.Value = Properties.Settings.Default.CreateInterval;
             numericUpDownMaxInstanceCount.Value = Properties.Settings.Default.MaxInstanceCount;
-            numericUpDownBackgroundOpacity.Value = Properties.Settings.Default.BackgroundOpacity;
-            numericUpDownForegroundOpacity.Value = Properties.Settings.Default.ForegroundOpacity;
+            numericUpDownBackgroundOpacity.Value = (decimal)((1 - Properties.Settings.Default.BackgroundOpacity) * 255);
+            numericUpDownForegroundOpacity.Value = (decimal)((1 - Properties.Settings.Default.ForegroundOpacity) * 255);
             lblVersion.Text += Application.ProductVersion.ToString();
         }
 
@@ -35,8 +35,8 @@ namespace Jx3ScreenSaver
             Properties.Settings.Default.ClosingTime = (int)numericUpDownClosingTime.Value;
             Properties.Settings.Default.CreateInterval = (int)numericUpDownCreateInterval.Value;
             Properties.Settings.Default.MaxInstanceCount = (int)numericUpDownMaxInstanceCount.Value;
-            Properties.Settings.Default.BackgroundOpacity = (int)numericUpDownBackgroundOpacity.Value;
-            Properties.Settings.Default.ForegroundOpacity = (int)numericUpDownForegroundOpacity.Value;
+            Properties.Settings.Default.BackgroundOpacity = 1 - ((double)numericUpDownBackgroundOpacity.Value / 255);
+            Properties.Settings.Default.ForegroundOpacity = 1 - ((double)numericUpDownForegroundOpacity.Value / 255);
             Properties.Settings.Default.Save();
             Close();
         }

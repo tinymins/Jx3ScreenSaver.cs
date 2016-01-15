@@ -68,11 +68,13 @@ namespace Jx3ScreenSaver
                 Location = new Point(0, 0);
             }
 
-            Opacity = 100 - Properties.Settings.Default.BackgroundOpacity;
             Bitmap bmpScreenshot = new Bitmap(ScreenArea.TotalWidth, ScreenArea.TotalHeight, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
             Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
             gfxScreenshot.CopyFromScreen(ScreenArea.LeftMostBound, ScreenArea.TopMostBound, 0, 0, ScreenArea.RectangleMostBound.Size, CopyPixelOperation.SourceCopy);
             BackgroundImage = bmpScreenshot;
+
+            if (!IsPreviewMode)
+                Opacity = Properties.Settings.Default.BackgroundOpacity;
 
             m_mouseLocation = Control.MousePosition;
 
@@ -110,7 +112,7 @@ namespace Jx3ScreenSaver
             Jx3StoppedForm msgbox = new Jx3StoppedForm(Properties.Settings.Default.ClosingTime);
             msgbox.Show();
             msgbox.BringToFront();
-            msgbox.Opacity = 100 - Properties.Settings.Default.ForegroundOpacity;
+            msgbox.Opacity = Properties.Settings.Default.ForegroundOpacity;
             msgbox.Top = Top + m_random.Next(0, Math.Max(Height - msgbox.Height, 0));
             msgbox.Left = Left + m_random.Next(0, Math.Max(Width - msgbox.Width, 0));
         }

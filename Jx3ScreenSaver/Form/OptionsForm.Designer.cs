@@ -194,6 +194,11 @@
             // numericUpDownForegroundOpacity
             // 
             this.numericUpDownForegroundOpacity.Location = new System.Drawing.Point(126, 51);
+            this.numericUpDownForegroundOpacity.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numericUpDownForegroundOpacity.Name = "numericUpDownForegroundOpacity";
             this.numericUpDownForegroundOpacity.Size = new System.Drawing.Size(56, 20);
             this.numericUpDownForegroundOpacity.TabIndex = 3;
@@ -210,6 +215,11 @@
             // numericUpDownBackgroundOpacity
             // 
             this.numericUpDownBackgroundOpacity.Location = new System.Drawing.Point(126, 25);
+            this.numericUpDownBackgroundOpacity.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numericUpDownBackgroundOpacity.Name = "numericUpDownBackgroundOpacity";
             this.numericUpDownBackgroundOpacity.Size = new System.Drawing.Size(56, 20);
             this.numericUpDownBackgroundOpacity.TabIndex = 1;
