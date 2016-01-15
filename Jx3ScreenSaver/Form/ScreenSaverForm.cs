@@ -25,8 +25,6 @@ namespace Jx3ScreenSaver
 
         private void ScreenSaverForm_Load(object sender, EventArgs e)
         {
-            Properties.Settings settings = Properties.Settings.Default;
-
             // Use double buffering to improve drawing performance
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
 
@@ -71,7 +69,7 @@ namespace Jx3ScreenSaver
             if (!Global.IsPreviewMode)
             {
                 // Set opacity
-                Opacity = Properties.Settings.Default.BackgroundOpacity;
+                Opacity = Settings.BackgroundOpacity;
 
                 // Try to play background music if exist
                 if (System.IO.File.Exists(BG_MUSIC))
@@ -95,7 +93,7 @@ namespace Jx3ScreenSaver
             m_mouseLocation = Control.MousePosition;
 
             // Set Timer
-            DrawingTimer.Interval = Properties.Settings.Default.CreateInterval;
+            DrawingTimer.Interval = Settings.CreateInterval;
             DrawingTimer.Enabled = !Global.IsPreviewMode;
         }
 
@@ -116,13 +114,13 @@ namespace Jx3ScreenSaver
 
         private void DrawingTimer_Tick(object sender, EventArgs e)
         {
-            if (Jx3StoppedForm.InstanceCount >= Properties.Settings.Default.MaxInstanceCount)
+            if (Jx3StoppedForm.InstanceCount >= Settings.MaxInstanceCount)
                 return;
 
-            Jx3StoppedForm msgbox = new Jx3StoppedForm(Properties.Settings.Default.ClosingTime);
+            Jx3StoppedForm msgbox = new Jx3StoppedForm(Settings.ClosingTime);
             msgbox.Show();
             msgbox.BringToFront();
-            msgbox.Opacity = Properties.Settings.Default.ForegroundOpacity;
+            msgbox.Opacity = Settings.ForegroundOpacity;
             msgbox.Top = Top + m_random.Next(0, Math.Max(Height - msgbox.Height, 0));
             msgbox.Left = Left + m_random.Next(0, Math.Max(Width - msgbox.Width, 0));
         }

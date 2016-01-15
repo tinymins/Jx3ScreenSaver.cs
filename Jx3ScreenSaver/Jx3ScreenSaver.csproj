@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Library\Settings.cs" />
     <Compile Include="Library\WinAPI.cs" />
+    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="Form\JX3ClientForm.resx">
       <DependentUpon>JX3ClientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,15 +96,6 @@
       <DependentUpon>ScreenSaverForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />

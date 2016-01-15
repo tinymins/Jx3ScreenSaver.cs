@@ -17,11 +17,11 @@ namespace Jx3ScreenSaver
 
         private void OptionsForm_Load(object sender, EventArgs e)
         {
-            numericUpDownClosingTime.Value = Properties.Settings.Default.ClosingTime;
-            numericUpDownCreateInterval.Value = Properties.Settings.Default.CreateInterval;
-            numericUpDownMaxInstanceCount.Value = Properties.Settings.Default.MaxInstanceCount;
-            numericUpDownBackgroundOpacity.Value = (decimal)((1 - Properties.Settings.Default.BackgroundOpacity) * 255);
-            numericUpDownForegroundOpacity.Value = (decimal)((1 - Properties.Settings.Default.ForegroundOpacity) * 255);
+            numericUpDownClosingTime.Value       = Settings.ClosingTime;
+            numericUpDownCreateInterval.Value    = Settings.CreateInterval;
+            numericUpDownMaxInstanceCount.Value  = Settings.MaxInstanceCount;
+            numericUpDownBackgroundOpacity.Value = (decimal)((1 - Settings.BackgroundOpacity) * 255);
+            numericUpDownForegroundOpacity.Value = (decimal)((1 - Settings.ForegroundOpacity) * 255);
             lblVersion.Text += Application.ProductVersion.ToString();
         }
 
@@ -32,12 +32,11 @@ namespace Jx3ScreenSaver
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ClosingTime = (int)numericUpDownClosingTime.Value;
-            Properties.Settings.Default.CreateInterval = (int)numericUpDownCreateInterval.Value;
-            Properties.Settings.Default.MaxInstanceCount = (int)numericUpDownMaxInstanceCount.Value;
-            Properties.Settings.Default.BackgroundOpacity = 1 - ((double)numericUpDownBackgroundOpacity.Value / 255);
-            Properties.Settings.Default.ForegroundOpacity = 1 - ((double)numericUpDownForegroundOpacity.Value / 255);
-            Properties.Settings.Default.Save();
+            Settings.ClosingTime = (int)numericUpDownClosingTime.Value;
+            Settings.CreateInterval = (int)numericUpDownCreateInterval.Value;
+            Settings.MaxInstanceCount = (int)numericUpDownMaxInstanceCount.Value;
+            Settings.BackgroundOpacity = 1 - ((double)numericUpDownBackgroundOpacity.Value / 255);
+            Settings.ForegroundOpacity = 1 - ((double)numericUpDownForegroundOpacity.Value / 255);
             Close();
         }
     }

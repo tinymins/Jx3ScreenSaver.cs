@@ -1,27 +1,30 @@
-﻿namespace WarpSpeed.Properties
+﻿using Microsoft.Win32;
+
+namespace Jx3ScreenSaver
 {
-    // This class allows you to handle specific events on the settings class:
-    //  The SettingChanging event is raised before a setting's value is changed.
-    //  The PropertyChanged event is raised after a setting's value is changed.
-    //  The SettingsLoaded event is raised after the setting values are loaded.
-    //  The SettingsSaving event is raised before the setting values are saved.
-    internal sealed partial class Settings {
-        
-        public Settings() {
-            // // To add event handlers for saving and changing settings, uncomment the lines below:
-            //
-            // this.SettingChanging += this.SettingChangingEventHandler;
-            //
-            // this.SettingsSaving += this.SettingsSavingEventHandler;
-            //
+    public class Settings
+    {
+        // Set setting value by key and value
+        private static void Set(string key, string value)
+        {
+            Registry.CurrentUser.CreateSubKey("SOFTWARE\\TmsJx3ScreenSaver").SetValue(key, value);
         }
-        
-        private void SettingChangingEventHandler(object sender, System.Configuration.SettingChangingEventArgs e) {
-            // Add code to handle the SettingChangingEvent event here.
+
+        // Get setting value by key and default value
+        private static string Get(string key, string defaultVal)
+        {
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\TmsJx3ScreenSaver");
+            if (rk == null)
+                return defaultVal;
+            else
+                return (string)rk.GetValue(key);
         }
-        
-        private void SettingsSavingEventHandler(object sender, System.ComponentModel.CancelEventArgs e) {
-            // Add code to handle the SettingsSaving event here.
-        }
+
+        // Setting values
+        public static int    ClosingTime       { get { return    int.Parse(Get("ClosingTime"      , "10000")); } set { Set("ClosingTime"      , value.ToString()); } }
+        public static int    CreateInterval    { get { return    int.Parse(Get("CreateInterval"   , "300"  )); } set { Set("CreateInterval"   , value.ToString()); } }
+        public static double BackgroundOpacity { get { return double.Parse(Get("BackgroundOpacity", "0"    )); } set { Set("BackgroundOpacity", value.ToString()); } }
+        public static double ForegroundOpacity { get { return double.Parse(Get("ForegroundOpacity", "1"    )); } set { Set("ForegroundOpacity", value.ToString()); } }
+        public static int    MaxInstanceCount  { get { return    int.Parse(Get("MaxInstanceCount" , "50"   )); } set { Set("MaxInstanceCount" , value.ToString()); } }
     }
 }
