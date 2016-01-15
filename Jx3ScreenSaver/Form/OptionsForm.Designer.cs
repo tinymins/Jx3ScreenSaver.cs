@@ -45,6 +45,7 @@
             this.lblAuthour = new System.Windows.Forms.Label();
             this.linkUpdate = new System.Windows.Forms.LinkLabel();
             this.lblVersion = new System.Windows.Forms.Label();
+            this.lblBgMusicTip = new System.Windows.Forms.Label();
             this.groupBoxSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxInstanceCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClosingTime)).BeginInit();
@@ -58,6 +59,7 @@
             // 
             this.groupBoxSetting.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxSetting.Controls.Add(this.lblBgMusicTip);
             this.groupBoxSetting.Controls.Add(this.numericUpDownMaxInstanceCount);
             this.groupBoxSetting.Controls.Add(this.lblMaxInstanceCount);
             this.groupBoxSetting.Controls.Add(this.btnApply);
@@ -71,14 +73,15 @@
             this.groupBoxSetting.Controls.Add(this.lblBackgroundOpacity);
             this.groupBoxSetting.Location = new System.Drawing.Point(12, 12);
             this.groupBoxSetting.Name = "groupBoxSetting";
-            this.groupBoxSetting.Size = new System.Drawing.Size(206, 202);
+            this.groupBoxSetting.Size = new System.Drawing.Size(245, 241);
             this.groupBoxSetting.TabIndex = 0;
             this.groupBoxSetting.TabStop = false;
             this.groupBoxSetting.Text = "设置";
             // 
             // numericUpDownMaxInstanceCount
             // 
-            this.numericUpDownMaxInstanceCount.Location = new System.Drawing.Point(126, 129);
+            this.numericUpDownMaxInstanceCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDownMaxInstanceCount.Location = new System.Drawing.Point(165, 129);
             this.numericUpDownMaxInstanceCount.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -111,9 +114,9 @@
             // 
             this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnApply.Location = new System.Drawing.Point(23, 164);
+            this.btnApply.Location = new System.Drawing.Point(23, 166);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(159, 23);
+            this.btnApply.Size = new System.Drawing.Size(198, 23);
             this.btnApply.TabIndex = 8;
             this.btnApply.Text = "确定";
             this.btnApply.UseVisualStyleBackColor = true;
@@ -121,12 +124,13 @@
             // 
             // numericUpDownClosingTime
             // 
+            this.numericUpDownClosingTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownClosingTime.Increment = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDownClosingTime.Location = new System.Drawing.Point(126, 103);
+            this.numericUpDownClosingTime.Location = new System.Drawing.Point(165, 103);
             this.numericUpDownClosingTime.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -148,12 +152,13 @@
             // 
             // numericUpDownCreateInterval
             // 
+            this.numericUpDownCreateInterval.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDownCreateInterval.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.numericUpDownCreateInterval.Location = new System.Drawing.Point(126, 77);
+            this.numericUpDownCreateInterval.Location = new System.Drawing.Point(165, 77);
             this.numericUpDownCreateInterval.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -193,7 +198,8 @@
             // 
             // numericUpDownForegroundOpacity
             // 
-            this.numericUpDownForegroundOpacity.Location = new System.Drawing.Point(126, 51);
+            this.numericUpDownForegroundOpacity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDownForegroundOpacity.Location = new System.Drawing.Point(165, 51);
             this.numericUpDownForegroundOpacity.Maximum = new decimal(new int[] {
             255,
             0,
@@ -214,7 +220,8 @@
             // 
             // numericUpDownBackgroundOpacity
             // 
-            this.numericUpDownBackgroundOpacity.Location = new System.Drawing.Point(126, 25);
+            this.numericUpDownBackgroundOpacity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDownBackgroundOpacity.Location = new System.Drawing.Point(165, 25);
             this.numericUpDownBackgroundOpacity.Maximum = new decimal(new int[] {
             255,
             0,
@@ -240,9 +247,9 @@
             this.groupBoxAbout.Controls.Add(this.lblAuthour);
             this.groupBoxAbout.Controls.Add(this.linkUpdate);
             this.groupBoxAbout.Controls.Add(this.lblVersion);
-            this.groupBoxAbout.Location = new System.Drawing.Point(12, 224);
+            this.groupBoxAbout.Location = new System.Drawing.Point(12, 259);
             this.groupBoxAbout.Name = "groupBoxAbout";
-            this.groupBoxAbout.Size = new System.Drawing.Size(206, 107);
+            this.groupBoxAbout.Size = new System.Drawing.Size(245, 107);
             this.groupBoxAbout.TabIndex = 1;
             this.groupBoxAbout.TabStop = false;
             this.groupBoxAbout.Text = "关于";
@@ -260,7 +267,7 @@
             // 
             this.linkUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.linkUpdate.AutoSize = true;
-            this.linkUpdate.Location = new System.Drawing.Point(145, 82);
+            this.linkUpdate.Location = new System.Drawing.Point(184, 82);
             this.linkUpdate.Name = "linkUpdate";
             this.linkUpdate.Size = new System.Drawing.Size(55, 13);
             this.linkUpdate.TabIndex = 1;
@@ -277,11 +284,23 @@
             this.lblVersion.TabIndex = 0;
             this.lblVersion.Text = "当前版本: ";
             // 
+            // lblBgMusicTip
+            // 
+            this.lblBgMusicTip.AllowDrop = true;
+            this.lblBgMusicTip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBgMusicTip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblBgMusicTip.Location = new System.Drawing.Point(17, 201);
+            this.lblBgMusicTip.Name = "lblBgMusicTip";
+            this.lblBgMusicTip.Size = new System.Drawing.Size(220, 35);
+            this.lblBgMusicTip.TabIndex = 11;
+            this.lblBgMusicTip.Text = "背景音乐: 将 BackgroundMusic.wav 放入屏幕保护(.scr)文件相同目录下即可播放";
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 343);
+            this.ClientSize = new System.Drawing.Size(269, 378);
             this.Controls.Add(this.groupBoxAbout);
             this.Controls.Add(this.groupBoxSetting);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -322,5 +341,6 @@
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.NumericUpDown numericUpDownMaxInstanceCount;
         private System.Windows.Forms.Label lblMaxInstanceCount;
+        private System.Windows.Forms.Label lblBgMusicTip;
     }
 }
