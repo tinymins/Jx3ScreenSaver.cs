@@ -120,6 +120,18 @@ public static class ScreenArea
     }
 
     /// <summary>
+    /// Gets the greatest "rect" coordinate of all screens on the system
+    /// </summary>
+    /// <returns>The largest visible "rect" screen coordinate</returns>
+    public static Rectangle RectangleMostBound
+    {
+        get
+        {
+            return new Rectangle(TopMostBound, LeftMostBound, TotalWidth, TotalHeight);
+        }
+    }
+
+    /// <summary>
     /// Gets the width of the screen with the highest resolution.
     /// </summary>
     /// <returns>The width of the screen with the highest resolution.</returns>
