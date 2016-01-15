@@ -21,10 +21,12 @@ namespace Jx3ScreenSaver
             if (!dicCache.ContainsKey(key))
             {
                 RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\TmsJx3ScreenSaver");
-                if (rk == null)
-                    dicCache[key] = defaultVal;
-                else
+
+                if (rk != null)
                     dicCache[key] = (string)rk.GetValue(key);
+
+                if (dicCache[key] == null)
+                    dicCache[key] = defaultVal;
             }
             return dicCache[key];
         }
