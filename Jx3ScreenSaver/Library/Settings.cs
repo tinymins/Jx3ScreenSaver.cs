@@ -1,23 +1,32 @@
 ﻿using Microsoft.Win32;
+using System.Collections.Generic;
 
 namespace Jx3ScreenSaver
 {
     public class Settings
     {
+        // Cache
+        private static Dictionary<string, string> dicCache = new Dictionary<string,string>();
+
         // Set setting value by key and value
         private static void Set(string key, string value)
         {
+            dicCache[key] = value;
             Registry.CurrentUser.CreateSubKey("SOFTWARE\\TmsJx3ScreenSaver").SetValue(key, value);
         }
 
         // Get setting value by key and default value
         private static string Get(string key, string defaultVal)
         {
-            RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\TmsJx3ScreenSaver");
-            if (rk == null)
-                return defaultVal;
-            else
-                return (string)rk.GetValue(key);
+            if (!dicCache.ContainsKey(key))
+            {
+                RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\TmsJx3ScreenSaver");
+                if (rk == null)
+                    dicCache[key] = defaultVal;
+                else
+                    dicCache[key] = (string)rk.GetValue(key);
+            }
+            return dicCache[key];
         }
 
         // Setting values
