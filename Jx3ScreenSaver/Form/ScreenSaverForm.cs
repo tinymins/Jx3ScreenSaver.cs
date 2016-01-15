@@ -14,7 +14,7 @@ namespace Jx3ScreenSaver
         private IntPtr m_parentWindowHandle;    // Handle to preview window, if applicable
         private Random m_random = new Random(); // Random object
         private Point m_mouseLocation;          // Keep track of the location of the mouse
-        const string BG_MUSIC = "BackgroundMusic.wav";
+        private string BG_MUSIC = Application.StartupPath + "\\BackgroundMusic.wav";
 
         public ScreenSaverForm(int parentWindowHandle)
         {
