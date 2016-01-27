@@ -25,7 +25,7 @@ namespace Jx3ScreenSaver
                 if (rk != null)
                     dicCache[key] = (string)rk.GetValue(key);
 
-                if (dicCache[key] == null)
+                if (!dicCache.ContainsKey(key))
                     dicCache[key] = defaultVal;
             }
             return dicCache[key];
