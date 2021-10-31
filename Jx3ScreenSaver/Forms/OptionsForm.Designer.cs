@@ -1,4 +1,4 @@
-﻿namespace Jx3ScreenSaver
+﻿namespace Jx3ScreenSaver.Forms
 {
     partial class OptionsForm
     {
@@ -57,7 +57,7 @@
             // 
             // groupBoxSetting
             // 
-            this.groupBoxSetting.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBoxSetting.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSetting.Controls.Add(this.lblBgMusicTip);
             this.groupBoxSetting.Controls.Add(this.numericUpDownMaxInstanceCount);
@@ -83,7 +83,7 @@
             // lblBgMusicTip
             // 
             this.lblBgMusicTip.AllowDrop = true;
-            this.lblBgMusicTip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblBgMusicTip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBgMusicTip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblBgMusicTip.Location = new System.Drawing.Point(26, 309);
@@ -129,7 +129,7 @@
             // 
             // btnApply
             // 
-            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnApply.Location = new System.Drawing.Point(34, 255);
             this.btnApply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -268,7 +268,7 @@
             // 
             // groupBoxAbout
             // 
-            this.groupBoxAbout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBoxAbout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxAbout.Controls.Add(this.lblAuthour);
             this.groupBoxAbout.Controls.Add(this.linkUpdate);

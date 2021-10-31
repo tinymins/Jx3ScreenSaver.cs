@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Jx3ScreenSaver
+namespace Jx3ScreenSaver.Forms
 {
     public partial class Jx3StoppedForm : Form
     {
