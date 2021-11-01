@@ -97,10 +97,11 @@ namespace Jx3ScreenSaver
         }
 
         // Setting values
-        public static int    ClosingTime       { get { return    int.Parse(Get("ClosingTime"      , "10000")); } set { Set("ClosingTime"      , value.ToString()); } }
-        public static int    CreateInterval    { get { return    int.Parse(Get("CreateInterval"   , "300"  )); } set { Set("CreateInterval"   , value.ToString()); } }
-        public static double BackgroundOpacity { get { return double.Parse(Get("BackgroundOpacity", "0"    )); } set { Set("BackgroundOpacity", value.ToString()); } }
-        public static double ForegroundOpacity { get { return double.Parse(Get("ForegroundOpacity", "1"    )); } set { Set("ForegroundOpacity", value.ToString()); } }
-        public static int    MaxInstanceCount  { get { return    int.Parse(Get("MaxInstanceCount" , "50"   )); } set { Set("MaxInstanceCount" , value.ToString()); } }
+        public static int    ClosingTime         { get { return    int.Parse(Get("ClosingTime"      , "10000")); } set { Set("ClosingTime"      , value.ToString()); } }
+        public static int    CreateInterval      { get { return    int.Parse(Get("CreateInterval"   , "300"  )); } set { Set("CreateInterval"   , value.ToString()); } }
+        public static double BackgroundOpacity   { get { return double.Parse(Get("BackgroundOpacity", "0"    )); } set { Set("BackgroundOpacity", value.ToString()); } }
+        public static double ForegroundOpacity   { get { return double.Parse(Get("ForegroundOpacity", "1"    )); } set { Set("ForegroundOpacity", value.ToString()); } }
+        public static int    MaxInstanceCount    { get { return    int.Parse(Get("MaxInstanceCount" , "50"   )); } set { Set("MaxInstanceCount" , value.ToString()); } }
+        public static bool   UseSeasunDumpReport { get { return bool.Parse(Get("UseSeasunDumpReport", "false")); } set { Set("UseSeasunDumpReport", value.ToString()); } }
     }
 }

@@ -30,11 +30,38 @@ namespace Jx3ScreenSaver.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.ClosingTimer = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // ClosingTimer
+            // 
+            this.ClosingTimer.Enabled = true;
+            this.ClosingTimer.Tick += new System.EventHandler(this.ClosingTimer_Tick);
+            // 
+            // JX3DumpReportForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(283, 195);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "JX3DumpReportForm";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "JX3DumpReportForm";
+            this.TopMost = true;
+            this.Activated += new System.EventHandler(this.JX3DumpReportForm_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.JX3DumpReportForm_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.JX3DumpReportForm_KeyDown);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.JX3DumpReportForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.JX3DumpReportForm_MouseMove);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer ClosingTimer;
     }
 }

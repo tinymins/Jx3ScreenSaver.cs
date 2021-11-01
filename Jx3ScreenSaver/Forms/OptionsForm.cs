@@ -22,6 +22,8 @@ namespace Jx3ScreenSaver.Forms
             numericUpDownMaxInstanceCount.Value  = Settings.MaxInstanceCount;
             numericUpDownBackgroundOpacity.Value = (decimal)((1 - Settings.BackgroundOpacity) * 255);
             numericUpDownForegroundOpacity.Value = (decimal)((1 - Settings.ForegroundOpacity) * 255);
+            optWin32Stopped.Checked = !Settings.UseSeasunDumpReport;
+            optSeasunDumpReport.Checked = Settings.UseSeasunDumpReport;
             lblVersion.Text += Application.ProductVersion.ToString();
         }
 
@@ -37,6 +39,7 @@ namespace Jx3ScreenSaver.Forms
             Settings.MaxInstanceCount = (int)numericUpDownMaxInstanceCount.Value;
             Settings.BackgroundOpacity = 1 - ((double)numericUpDownBackgroundOpacity.Value / 255);
             Settings.ForegroundOpacity = 1 - ((double)numericUpDownForegroundOpacity.Value / 255);
+            Settings.UseSeasunDumpReport = optSeasunDumpReport.Checked;
             Close();
         }
     }

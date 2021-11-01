@@ -122,6 +122,9 @@
     <EmbeddedResource Include="Forms\JX3ClientForm.resx">
       <DependentUpon>JX3ClientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JX3DumpReportForm.resx">
+      <DependentUpon>JX3DumpReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Jx3StoppedForm.resx">
       <DependentUpon>Jx3StoppedForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />
+    <None Include="Bitmap130.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
