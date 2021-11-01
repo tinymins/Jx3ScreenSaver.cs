@@ -1,4 +1,4 @@
-﻿namespace Jx3ScreenSaver
+﻿namespace Jx3ScreenSaver.Forms
 {
     partial class Jx3StoppedForm
     {
@@ -72,7 +72,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(12, 73);
             this.progressBar1.MarqueeAnimationSpeed = 50;

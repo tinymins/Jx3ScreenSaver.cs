@@ -1,4 +1,4 @@
-﻿namespace Jx3ScreenSaver
+﻿namespace Jx3ScreenSaver.Forms
 {
     partial class ScreenSaverForm
     {

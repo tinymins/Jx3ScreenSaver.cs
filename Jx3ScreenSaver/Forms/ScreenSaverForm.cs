@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Jx3ScreenSaver
+namespace Jx3ScreenSaver.Forms
 {
     public partial class ScreenSaverForm : Form
     {
@@ -85,7 +85,11 @@ namespace Jx3ScreenSaver
                 for (int i = Screen.AllScreens.GetLowerBound(0); i <= Screen.AllScreens.GetUpperBound(0); i++)
                 {
                     int index = i;
-                    (new System.Threading.Thread(delegate() { System.Windows.Forms.Application.Run(new JX3ClientForm(index)); })).Start();
+                    (new System.Threading.Thread(delegate() { Application.Run(new JX3ClientForm(index) { 
+                        // Since JX3Client should not be running when DumpReport is running, we hide the client window
+                        // by setting opacity to 0.01 (invisible but still responds to events) if DumpReport mode is used.
+                        Opacity = Settings.UseSeasunDumpReport ? 0.01D : 1.0D 
+                    }); })).Start();
                 }
             }
 
@@ -114,15 +118,28 @@ namespace Jx3ScreenSaver
 
         private void DrawingTimer_Tick(object sender, EventArgs e)
         {
-            if (Jx3StoppedForm.InstanceCount >= Settings.MaxInstanceCount)
-                return;
-
-            Jx3StoppedForm msgbox = new Jx3StoppedForm(Settings.ClosingTime);
-            msgbox.Show();
-            msgbox.BringToFront();
-            msgbox.Opacity = Settings.ForegroundOpacity;
-            msgbox.Top = Top + m_random.Next(0, Math.Max(Height - msgbox.Height, 0));
-            msgbox.Left = Left + m_random.Next(0, Math.Max(Width - msgbox.Width, 0));
+            if (Settings.UseSeasunDumpReport)
+            {
+                if (JX3DumpReportForm.InstanceCount >= Settings.MaxInstanceCount)
+                    return;
+                JX3DumpReportForm msgbox = new JX3DumpReportForm(Settings.ClosingTime);
+                msgbox.Show();
+                msgbox.BringToFront();
+                msgbox.Opacity = Settings.ForegroundOpacity;
+                msgbox.Top = Top + m_random.Next(0, Math.Max(Height - msgbox.Height, 0));
+                msgbox.Left = Left + m_random.Next(0, Math.Max(Width - msgbox.Width, 0));
+            }
+            else
+            {
+                if (Jx3StoppedForm.InstanceCount >= Settings.MaxInstanceCount)
+                    return;
+                Jx3StoppedForm msgbox = new Jx3StoppedForm(Settings.ClosingTime);
+                msgbox.Show();
+                msgbox.BringToFront();
+                msgbox.Opacity = Settings.ForegroundOpacity;
+                msgbox.Top = Top + m_random.Next(0, Math.Max(Height - msgbox.Height, 0));
+                msgbox.Left = Left + m_random.Next(0, Math.Max(Width - msgbox.Width, 0));
+            }
         }
     }
 }
